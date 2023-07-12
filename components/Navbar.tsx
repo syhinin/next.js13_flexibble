@@ -4,9 +4,10 @@ import React from "react";
 
 import { NavLinks } from "@/helpers";
 import { AuthProviders } from "@/components";
+import { getCurrentUser } from "@/lib";
 
-const Navbar = () => {
-  const session = null;
+const Navbar = async () => {
+  const session = await getCurrentUser();
   return (
     <nav className="flexBetween navbar">
       <div className="flex-1 flexStart gap-10">
@@ -22,9 +23,17 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flexCenter gap-4">
-        {session ? (
+        {session?.user ? (
           <>
-            UserPhoto
+            {session.user?.image && (
+              <Image
+                alt="user image"
+                src={session.user.image}
+                className="rounded-full"
+                height={40}
+                width={40}
+              />
+            )}
             <Link href="/create-project">Share Work</Link>
           </>
         ) : (

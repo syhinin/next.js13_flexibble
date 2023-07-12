@@ -1,23 +1,27 @@
-
 ## Tech stack
 
-- Next.js, 
-- TS, 
-- GraphQL, 
+- Next.js,
+- TS,
+- GraphQL,
 - Grafbase a serverless GraphQL api,
 - Next auth,
 - Tailwind css
-s
+
+## Environment variables
+
+create file .env.local and define there next variables
+
+NEXT_PUBLIC_GRAFBASE_API
+NEXT_PUBLIC_GRAFBASE_API_KEY
+
 ## Getting Started
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# and to local DB
+npx grafbase dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
